@@ -1,5 +1,5 @@
 const rc = 1
-const apikey= '07e0e692a4c044b2963896f8cbc4d8df'
+const apikey= 'YourAPIkey'
 
  function getRandomRecipe(){ //returns single random recipe
     let urltobe = `https://api.spoonacular.com/recipes/random?apiKey=${apikey}`
