@@ -85,6 +85,27 @@ function searchRecipebyIngredients(ingredient,mealtype){ //allows to search for 
 }
 
 
+function ultimatesearch(query){ //self explanatory
+    
+    let gotquery = String(query).split(',')
+    
+    let stringedquery = '';
+    console.log(gotquery.length)
+    for (let i = 0; i < gotquery.length; i++) {
+        console.log("processing")
+        stringedquery +=gotquery[i] + ','
+      }
+    var finalstringedquery = stringedquery.substring(0, stringedquery.length - 1);
+    console.log(finalstringedquery)
+     let urltobe = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apikey}&number=${rc}&query=${finalstringedquery}` 
+    console.log(urltobe)
+    fetch(urltobe)
+        .then(res => res.json())
+        .then(data => console.log(data))
+
+
+ }
+
 
 
 
