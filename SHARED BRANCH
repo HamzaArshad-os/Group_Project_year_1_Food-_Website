@@ -12,27 +12,44 @@
 <body>
     <div class="navigation">
         <div class="navbar">
-            logo + ul page links (recipes, cousines, about, contact)
+            <img src="logo" alt="logo" id="logo"> 
+            <ul>
+                <a href="">Recipes</a>
+                <a href="">Cousines</a>
+                <a href="">About</a>
+                <a href="">Contacr</a>
+            </ul> 
         </div>
     </div>
     
     <div class="announcement-section">
-        <h2> Save £££ on our affordable recipes for students </h2>
+        <h1 id="announcement">Save £££ on our affordable recipes for students</h1>
     </div>
 
     <div class="header">
-        <div>instructions table(h1 + 1x3table)</div>
-        <div>
-        <h1> Join thousands of students who are saving up to £250 a month on shopping</h1>
-        </div>
+        <div class="header-grid">
+            <div class="hgrid-item">step1</div>
+            <div class="hgrid-item">step2</div>
+            <div class="hgrid-item">step3</div>
+            <div class="hgrid-item">join thousands of students who are saving up to £250 a month on shopping</div>
     </div>
 
     <div class="favourites-section">
-        My favourites section (h1 + 1x4table)
+        <h1>My Favourites</h1>
+        <div class="favourite-grid">
+            <div class="fgrid-item">frecipe_1_img</div>
+            <div class="fgrid-item">frecipe_2_img</div>
+            <div class="fgrid-item">frecipe_3_img</div>
+            <div class="fgrid-item">frecipe_4_img</div>
     </div>
 
     <div class="vegan-section">
-        vegan section (h1 + 1x4table)
+        <h1>Vegan</h1>
+        <div class="vegan-grid">
+            <div class="vgrid-item">vrecipe_1_img</div>
+            <div class="vgrid-item">vrecipe_2_img</div>
+            <div class="vgrid-item">vrecipe_3_img</div>
+            <div class="vgrid-item">vrecipe_4_img</div>
     </div>
 </body>
 
