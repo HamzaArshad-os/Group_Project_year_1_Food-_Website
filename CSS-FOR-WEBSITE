@@ -1,0 +1,60 @@
+/*////////////////////////HEADER PART OF THE HTML  ////////////////////*/
+
+#announcement {
+    /* This is the part that changes the position and color of the "Save £££" txt */
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.announcement-section {
+    /* This is the purple background behind the "Save £££..." txt */
+    background-color: blueviolet;
+}
+
+.navbar {
+    /* This is the background of the navbar */
+    display: flex;
+    justify-content: right;
+    background-color: white;
+}
+
+.navbarHead {
+    /* This is the text inside the navbar */
+    margin-left: 5vw;
+    padding: 2vw;
+    color: purple;
+}
+
+
+/*////////////////////////END OF HEADER PART OF THE HTML  ////////////////////*/
+
+body {
+    background-color: lightblue;
+}
+
+#favouritesID {
+    color: white;
+}
+
+#veganID {
+    color: white;
+}
+
+.header-grid {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10vw;
+}
+
+.hgrid-item {
+    margin-left: 10vw;
+}
+
+.hgrid-item-text {
+    margin-left: 10vw;
+}
+
+
+/* NOTE FOR MAHAD: All I've done is position some of the text using the css. If you could
+position the images called by the class "fgrid-item"  that'd be all or now till we get more html*/
