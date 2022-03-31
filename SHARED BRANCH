@@ -10,12 +10,29 @@
 </head>
 
 <body>
-    <div>
-        <h1 id="header">Cooking Saves</h1>
+    <div class="navigation">
+        <div class="navbar">
+            logo + ul page links (recipes, cousines, about, contact)
+        </div>
+    </div>
+    
+    <div class="announcement-section">
+        <h2> Save £££ on our affordable recipes for students </h2>
     </div>
 
-    <div id="">
-        <h2 id="headerTwo">Save £££ on our affordable recipes for students</h2>
+    <div class="header">
+        <div>instructions table(h1 + 1x3table)</div>
+        <div>
+        <h1> Join thousands of students who are saving up to £250 a month on shopping</h1>
+        </div>
+    </div>
+
+    <div class="favourites-section">
+        My favourites section (h1 + 1x4table)
+    </div>
+
+    <div class="vegan-section">
+        vegan section (h1 + 1x4table)
     </div>
 </body>
 
