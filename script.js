@@ -1,5 +1,5 @@
 const rc = 1
-const apikey= 'YourAPIkey'
+const apikey= '08d74994ae54482a8a8515f54c1e496c'
 
  function getRandomRecipe(){ //returns single random recipe
     let urltobe = `https://api.spoonacular.com/recipes/random?apiKey=${apikey}`
@@ -100,21 +100,37 @@ function ultimatesearch(query){ //self explanatory
      let urltobe = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apikey}&number=${rc}&query=${finalstringedquery}` 
     console.log(urltobe)
     fetch(urltobe)
-        .then(res => res.json())
-        .then(data => console.log(data))
+  
 
+  .then((response)=>{
+    return response.json();
+  })
 
- }
+  
 
+  
+  .then((iddata) => { 
+    let id="";
+    
+    iddata.results.map((values) =>{
+  
+      id += `<div id="id-text">
+      <h1>${values.id}</h1>
 
+      </div>`
+  })
 
+  console.log(iddata)
+    document.getElementById("id-text").innerHTML = id
+})
 
-
+  
+}
 
  const btn = document.getElementById("btn");
  btn.addEventListener("click",function(e){
      e.preventDefault();
-    getRecipebyCuisine()
+    ultimatesearch(document.getElementById("input1").value)
 
  });
 
@@ -153,4 +169,3 @@ function ultimatesearch(query){ //self explanatory
 
 
  }
- 
