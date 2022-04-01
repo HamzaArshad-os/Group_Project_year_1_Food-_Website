@@ -55,6 +55,28 @@ body {
     margin-left: 10vw;
 }
 
+.fgrid-item{
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    padding: 20px;
+    transition: 0.5s;
+}
 
+.fgrid-item:hover{
+    box-shadow: 0 0 20px 0px rgba(247, 247, 247)
+}
+
+.vgrid-item{
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    padding: 20px;
+    transition: 0.5s;
+}
+
+.vgrid-item:hover{
+    box-shadow: 0 0 20px 0px rgba(247, 247, 247)
+}
 /* NOTE FOR MAHAD: All I've done is position some of the text using the css. If you could
-position the images called by the class "fgrid-item"  that'd be all or now till we get more html*/
+position the images called by the class "fgrid-item"  that'd be all or now till we get more html*/-------- Did both fgrid and vgrid plus hover feature---
