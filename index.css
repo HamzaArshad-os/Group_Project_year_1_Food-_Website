@@ -18,22 +18,37 @@
 }
 
 .navbar {
-    /* This is the background of the navbar */
+    /* This is the background of the navbar (The recipies cuisines etc part) */
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-content: space-evenly;
     background-color: white;
+    padding: 0vw;
+    border: solid;
 }
 
 .navbarHead {
     /* This is the text inside the navbar */
-    padding: 2vw;
+    padding: 0.7vw;
     color: purple;
+    /* border: solid; */
 }
 
 #logo {
     width: 400px;
 }
+
+a:link {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 
 
 /*////////////////////////END OF HEADER PART OF THE HTML  ////////////////////*/
