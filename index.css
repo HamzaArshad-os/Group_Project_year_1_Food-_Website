@@ -9,28 +9,38 @@
 
 .announcement-section {
     /* This is the purple background behind the "Save £££..." txt */
-    background-color: blueviolet;
+    background-color: #3D115F;
+}
+
+.navigation {
+    width: 100%;
+    padding: 0%;
 }
 
 .navbar {
     /* This is the background of the navbar */
     display: flex;
-    justify-content: right;
+    justify-content: center;
+    align-content: space-evenly;
     background-color: white;
 }
 
 .navbarHead {
     /* This is the text inside the navbar */
-    margin-left: 5vw;
     padding: 2vw;
     color: purple;
+}
+
+#logo {
+    width: 400px;
 }
 
 
 /*////////////////////////END OF HEADER PART OF THE HTML  ////////////////////*/
 
 body {
-    background-color: lightblue;
+    background-color: #9b71bc;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #favouritesID {
@@ -64,7 +74,7 @@ body {
 }
 
 .fgrid-item:hover{
-    box-shadow: 0 0 20px 0px rgba(247, 247, 247)
+    box-shadow: 0 0 20px 0px #3D115F
 }
 
 .vgrid-item{
@@ -76,7 +86,15 @@ body {
 }
 
 .vgrid-item:hover{
-    box-shadow: 0 0 20px 0px rgba(247, 247, 247)
+    box-shadow: 0 0 20px 0px #3D115F
 }
-/* NOTE FOR MAHAD: All I've done is position some of the text using the css. If you could
-position the images called by the class "fgrid-item"  that'd be all or now till we get more html*/-------- Did both fgrid and vgrid plus hover feature---
+
+.favourite-grid img{
+    width: 300px;
+
+}
+
+.vegan-grid img{
+    width: 300px;
+}
+
