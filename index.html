@@ -1,68 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foody</title>
-    <link href="stylesheet.css" rel="stylesheet">
-</head>
+    <link href="stylesheet.css" rel="stylesheet" />
+  </head>
 
-<body>
+  <body>
     <div class="navigation">
-        <img src="logo.png" alt="logo" id="logo">
-        <div class="navbar">
+      <img src="logo.png" alt="logo" id="logo" />
+      <div class="navbar">
+        <a href="index.html" class="navbarHead">Recipes</a>
+        <a href="" class="navbarHead">Cuisines</a>
+        <a href="" class="navbarHead">About</a>
+        <a href="" class="navbarHead">Contact</a>
+      </div>
+      <!-- Making the searhc bar -->
+      <!-- <div class="search">
+        <input
+          class="searchTxt"
+          type="text"
+          name=""
+          placeholder="Type to search"
+        />
+        <a class="searchBtn" href="#"></a> -->
 
-            <ul>
-                <a href="index.html" class="navbarHead">Recipes</a>
-                <a href="" class="navbarHead">Cuisines</a>
-                <a href="" class="navbarHead">About</a>
-                <a href="" class="navbarHead">Contact</a>
-            </ul>
-        </div>
+        <div class = "meal-search-box">
+
+            <input type = "text" class = "search-control" placeholder="Enter some inspiration or empty search for a random recipe" id = "search-input">
+  
+            <button type = "submit" class = "search-btn btn" id = "search-btn">
+  
+              <i class = "fas fa-search"></i>
+  
+            </button>
+  
+          </div>
+        <!-- End of the search bar -->
+      </div>
     </div>
-
+</div>
     <div class="announcement-section">
-        <h1 id="announcement">Save £££ on our affordable recipes for students</h1>
+      <h1 id="announcement">Save £££ on our affordable recipes for students</h1>
     </div>
 
     <div class="header">
-        <div class="header-grid">
-
-            <div class="hgrid-item">Choose your cuisine and your recipe</div>
-            <div class="hgrid-item">Use our discounts at any supermarket</div>
+      <div class="header-grid">
+        <div class="hgrid-item">Choose your cuisine and your recipe</div>
+        <!-- <div class="hgrid-item">Use our discounts at any supermarket</div>
             <div class="hgrid-item">Follow our easy instructions and enjoy!</div>
 
-            <div class="hgrid-item-text">Join thousands of students who are saving up to £250 a month on shopping!</div>
+            <div class="hgrid-item-text">Join thousands of students who are saving up to £250 a month on shopping!</div> -->
 
-
-            <div class="number1">1</div>
+        <!-- <div class="number1">1</div>
 
             <div class="number2">2</div>
 
-            <div class="number3">3</div>
+            <div class="number3">3</div> -->
+      </div>
+    </div>
+
+    <div class="favourites-section">
+      <h3 id="favouritesID">Popular</h3>
+      <div class="favourite-grid">
+        <div class="fgrid-item">
+          <img
+            src="chickenstew.png"
+            alt="picture of Healthy Chicken Stew recipe"
+          />
         </div>
-
-        <div class="favourites-section">
-            <h3 id="favouritesID">Popular</h3>
-            <div class="favourite-grid">
-                <div class="fgrid-item"><img src="chickenstew.png" alt="picture of Healthy Chicken Stew recipe"></div>
-                <div class="fgrid-item"><img src="chickencaesarsalad.png" alt="picture of Chicken Caesar Salad recipe"></div>
-                <div class="fgrid-item"><img src="tenderbeeftacos.png" alt="picture of Tender Beef Tacos recipe"></div>
-                <div class="fgrid-item"><img src="japaneseramen.png" alt="picture of Japanese Ramen recipe"></div>
-            </div>
-
-         <div class="vegan-section">
-             <h3 id="veganID">Vegan</h3>
-                <div class="vegan-grid">
-                    <div class="vgrid-item"><img src="vegansaladbowl.png" alt="picture of Vegan Salad Bowl recipe"></div>
-                    <div class="vgrid-item"><img src="pizzamargherita.png" alt="picture of Pizza Margherita recipe"></div>
-                    <div class="vgrid-item"><img src="falafel.png" alt="picture of Pizza Margherita recipe"></div>
-                    <div class="vgrid-item"><img src="tofu ramen.png" alt="picture of Pizza Margherita recipe"></div>
-                </div>
-            </div>
+        <div class="fgrid-item">
+          <img
+            src="chickencaesarsalad.png"
+            alt="picture of Chicken Caesar Salad recipe"
+          />
         </div>
-</body>
+        <div class="fgrid-item">
+          <img
+            src="tenderbeeftacos.png"
+            alt="picture of Tender Beef Tacos recipe"
+          />
+        </div>
+        <div class="fgrid-item">
+          <img src="japaneseramen.png" alt="picture of Japanese Ramen recipe" />
+        </div>
+      </div>
 
+      <div class="vegan-section">
+        <h3 id="veganID">Vegan</h3>
+        <div class="vegan-grid">
+          <div class="vgrid-item">
+            <img
+              src="vegansaladbowl.png"
+              alt="picture of Vegan Salad Bowl recipe"
+            />
+          </div>
+          <div class="vgrid-item">
+            <img
+              src="pizzamargherita.png"
+              alt="picture of Pizza Margherita recipe"
+            />
+          </div>
+          <div class="vgrid-item">
+            <img src="falafel.png" alt="picture of Pizza Margherita recipe" />
+          </div>
+          <div class="vgrid-item">
+            <img src="tofuRamen.png" alt="picture of Pizza Margherita recipe" />
+          </div>
+          <h3>Cuisines</h3>
+
+    <div id="cusine-category">
+
+      <button type = "submit" class = "cuisine" value="African">African</button>
+
+      <button type = "submit" class = "cuisine" value="American">American</button>
+
+      <button type = "submit" class = "cuisine" value="British">British</button>
+
+      <button type = "submit" class = "cuisine" value="Cajun">Cajun</button>
+
+      <button type = "submit" class = "cuisine" value="Caribbean">Caribbean</button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
