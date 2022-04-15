@@ -1,5 +1,8 @@
 /*////////////////////////HEADER PART OF THE HTML  ////////////////////*/
-
+*{
+    margin: 0;
+    padding: 0;
+}
 #announcement {
     /* This is the part that changes the position and color of the "Save £££" txt */
     color: white;
@@ -34,6 +37,56 @@
     /* border: solid; */
 }
 
+/* Making the search bar  */
+/* .search{ 
+    position: relative;
+    /* right: 90.5%; 
+    bottom: 50px;
+
+    align-items: center;
+
+    width: 180px;
+
+    height: 20px;
+    border-radius: 40px;
+    padding: 15px;
+    background: #9c88ff;
+} */
+
+
+.search-control, .search-btn{
+    width: 100%; 
+}
+
+    .search-control{
+color: var(--tenne-tawny);
+border-top-left-radius: 2rem;
+border-bottom-left-radius: 2rem;
+}
+.search-control::placeholder{
+color: var(--tenne-tawny);
+}
+.search-btn{ 
+    width: 55px;
+    height: 55px;
+     font-size: 1.8rem;
+     background: var(--tenne-tawny);
+     color: #fff;
+    border: none;
+     border-top-right-radius: 2rem;
+     border-bottom-right-radius: 2rem;
+ transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+     -moz-transition: all 0.4s linear;
+     -ms-transition: all 0.4s linear;
+ -o-transition: all 0.4s linear;
+}
+.search-btn:hover{
+ background: var(--tenne-tawny-dark);
+}
+
+
+
 #logo {
     width: 400px;
 }
@@ -59,9 +112,9 @@ body {
 }
 
 .header-grid {
-    /*display: flex;*/
-    justify-content: space-around;
-    margin-left: 10vw;
+    display: flex;
+    justify-content: center;
+    /* margin-left: 10vw; */
 }
 
 .hgrid-item {
