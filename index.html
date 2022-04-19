@@ -1,68 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Find Meal For Your Ingredients</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="stylesheet.css" />
-  </head>
-  <body>
-    <div class="navigation">
-      <img src="logo.png" alt="logo" id="logo" />
-      <div class="navbar">
-        <div class="meal-search-box">
-          <input
-            type="text"
-            class="search-control"
-            placeholder="Enter some inspiration "
-            id="search-input"
-          />
-          <button
-            type="submit"
-            class="search-btn btn"
-            id="search-btn"
-            onclick="showresults()"
-          >
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-        <a href="" id="about">About</a>
-        <a href="" id="contact">Contact</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Meal For Your Ingredients</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+  <div class="navigation">
+    <img src="logo.png" alt="logo" id="logo" />
+    <div class="navbar">
+      <div class = "meal-search-box">
+        <input type = "text" class = "search-control" placeholder="Enter some inspiration " id = "search-input">
+        <button type = "submit" class = "search-btn btn" id = "search-btn" onclick="showresults()">
+          <i class = "fas fa-search"></i>
+        </button>
       </div>
-
+      <a href="" class="navbarHead">About</a>
+      <a href="" class="navbarHead">Contact</a>
+    </div>
+    
       <!-- End of the search bar -->
     </div>
-    <div class="announcement-section">
-      <h1 id="announcement">Save £££ on our affordable recipes for students</h1>
-    </div>
+  </div>
+  <div class="announcement-section">
+    <h1 id="announcement">Save £££ on our affordable recipes for students</h1>
+  </div>
 
-    <div class="header">
-      <div class="header-grid">
-        <div class="hgrid-item">Choose your cuisine and your recipe</div>
-        <!-- <div class="hgrid-item">Use our discounts at any supermarket</div>
+  <div class="header">
+    <div class="header-grid" style="display:block" id="hideonsearch">
+      <div class="hgrid-item"> Choose your cuisine and your recipe   @ Dagogo , bring these white boxes back if you like, this 1 will hide once the user searches something ,if you do want them back tell me and i will sort the backend out for it ,easy stuff</div>
+      <!-- <div class="hgrid-item">Use our discounts at any supermarket</div>
           <div class="hgrid-item">Follow our easy instructions and enjoy!</div>
+
           <div class="hgrid-item-text">Join thousands of students who are saving up to £250 a month on shopping!</div> -->
 
-        <!-- <div class="number1">1</div>
+      <!-- <div class="number1">1</div>
+
           <div class="number2">2</div>
+
           <div class="number3">3</div> -->
-      </div>
     </div>
+  </div>
+</div>
 
-    <div class="meal-wrapper" style="display: none" id="reusltsdiv">
-      <div class="meal-search">
-        <h2 class="title">Find Meals For Your Ingredients</h2>
-      </div>
-
-      <div class="meal-result">
-        <h2 class="title">Your Search Results:</h2>
-        <div id="meal">
+  <div class = "container" >
+    <div class = "meal-wrapper" style="display:none" id="reusltsdiv">
+      <div class = "meal-search">
+        <h2 class = "title">Find Meals For Your Ingredients</h2>
+        
+      <div class = "meal-result">
+        <h2 class = "title">Your Search Results:</h2>
+        <div id= "meal">
           <!-- meal item -->
           <!-- <div class = "meal-item">
             <div class = "meal-img">
@@ -77,18 +67,15 @@
         </div>
       </div>
 
-      <div class="meal-details">
+
+      <div class = "meal-details">
         <!-- recipe close btn -->
-        <button
-          type="button"
-          class="btn recipe-close-btn"
-          id="recipe-close-btn"
-        >
-          <i class="fas fa-times"></i>
+        <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn">
+          <i class = "fas fa-times"></i>
         </button>
 
         <!-- meal content -->
-        <div class="meal-details-content">
+        <div class = "meal-details-content">
           <!-- <h2 class = "recipe-title">Meals Name Here</h2>
           <p class = "recipe-category">Category Name</p>
           <div class = "recipe-instruct">
@@ -106,102 +93,95 @@
       </div>
     </div>
 
-    <div class="favourites-section">
-      <h3 id="favouritesID">Popular</h3>
-      <div class="favourite-grid">
-        <div class="fgrid-item">
-          <img
-            src="chickenstew.png"
-            alt="picture of Healthy Chicken Stew recipe"
-          />
-        </div>
+   
+  </div>
 
-        <div class="fgrid-item">
-          <img
-            src="chickencaesarsalad.png"
-            alt="picture of Chicken Caesar Salad recipe"
-          />
-        </div>
-        <div class="fgrid-item">
-          <img
-            src="tenderbeeftacos.png"
-            alt="picture of Tender Beef Tacos recipe"
-          />
-        </div>
-        <div class="fgrid-item">
-          <img src="japaneseramen.png" alt="picture of Japanese Ramen recipe" />
-        </div>
+  <div class="cusine-section">
+    <h3 id="cusineID">cuisine</h3>
+    <div class="cusine-grid">
+      <div class="fgrid-item">
+        <input class="cuisine" id="African" type = "image" src="pizzamargherita.png" alt=" an iamge description" width="100" height="48">African</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="American"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">American</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="British"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">British</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Cajun"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Cajun</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Caribbean"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Caribbean</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Chinese"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Chinese</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Eastern"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Eastern</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="French"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">French</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="German"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">German</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Greek"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Greek</input>
+      </div> 
+      <div class="fgrid-item">
+        <input class="cuisine" id="Indian"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Indian</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Irish"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Irish</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Italian"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Italian</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Japanese"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Japanese</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Jewish"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Jewish</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Korean"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Korean</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Latin_American"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Latin American</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Mediterranean"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Mediterranean</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Mexican"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Mexican</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Middle_Eastern"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Middle Eastern</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Nordic"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Nordic</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Southern"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Southern</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Spanish"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Spanish</input>
+      </div>
+      <div class="fgrid-item">
+        <input class="cuisine" id="Vietnamese"   type = "image" src="pizzamargherita.png" alt=" an iamge" width="100" height="48">Vietnamese</input>
       </div>
     </div>
-    <div class="vegan-section">
-      <h3 id="veganID">Vegan</h3>
-      <div class="vegan-grid">
-        <div class="vgrid-item">
-          <img
-            src="vegansaladbowl.png"
-            alt="picture of Vegan Salad Bowl recipe"
-          />
-        </div>
-        <div class="vgrid-item">
-          <img
-            src="pizzamargherita.png"
-            alt="picture of Pizza Margherita recipe"
-          />
-        </div>
-        <div class="vgrid-item">
-          <img src="falafel.png" alt="picture of Falafel recipe" />
-        </div>
-        <div class="vgrid-item">
-          <img src="tofuramen.png" alt="picture of Tofu Ramen recipe" />
-        </div>
-      </div>
-    </div>
-    <h3>Cusines</h3>
-    <div id="cusine-category">
-      <button
-        type="submit"
-        src="pizzamargherita.png"
-        class="cuisine"
-        value="African"
-        width="100"
-        height="48"
-      >
-        African
-      </button>
-      <button type="submit" class="cuisine" value="American">American</button>
-      <button type="submit" class="cuisine" value="British">British</button>
-      <button type="submit" class="cuisine" value="Cajun">Cajun</button>
-      <button type="submit" class="cuisine" value="Caribbean">Caribbean</button>
-      <button type="submit" class="cuisine" value="Chinese">Chinese</button>
-      <button type="submit" class="cuisine" value="Eastern ">Eastern</button>
-      <button type="submit" class="cuisine" value="French">French</button>
-      <button type="submit" class="cuisine" value="German">German</button>
-      <button type="submit" class="cuisine" value="Greek">Greek</button>
-      <button type="submit" class="cuisine" value="Indian">Indian</button>
-      <button type="submit" class="cuisine" value="Irish">Irish</button>
-      <button type="submit" class="cuisine" value="Italian">Italian</button>
-      <button type="submit" class="cuisine" value="Japanese">Japanese</button>
-      <button type="submit" class="cuisine" value="Jewish">Jewish</button>
-      <button type="submit" class="cuisine" value="Korean">Korean</button>
-      <button type="submit" class="cuisine" value="Latin American">
-        Latin American
-      </button>
-      <button type="submit" class="cuisine" value="Mediterranean">
-        Mediterranean
-      </button>
-      <button type="submit" class="cuisine" value="Mexican">Mexican</button>
-      <button type="submit" class="cuisine" value="Middle Eastern">
-        Middle Eastern
-      </button>
-      <button type="submit" class="cuisine" value="Nordic">Nordic</button>
-      <button type="submit" class="cuisine" value="Southern">Southern</button>
-      <button type="submit" class="cuisine" value="Spanish">Spanish</button>
-      <button type="submit" class="cuisine" value="Thai">Thai</button>
-      <button type="submit" class="cuisine" value="Vietnamese">
-        Vietnamese
-      </button>
-    </div>
+  </div>
+    
+     
 
-    <script src="script.js"></script>
-  </body>
+  
+  
+  
+
+
+
+  <script src = "script.js"></script>
+</body>
 </html>
