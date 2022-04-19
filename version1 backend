@@ -5,7 +5,7 @@ const apikey= '07e0e692a4c044b2963896f8cbc4d8df'
 
 
 
-const rc = 10
+const rc = 2
 const searchBtn = document.getElementById('search-btn');
 
 const mealList = document.getElementById('meal');
@@ -16,8 +16,6 @@ const recipeCloseBtn = document.getElementById('recipe-close-btn');
 
 
 
-//test cusine buttons
-//const searchbycusine = document.getElementsByClassName('cuisine') 
 
  
 
@@ -27,13 +25,12 @@ searchBtn.addEventListener('click', getMealList);
 
 mealList.addEventListener('click', getMealRecipe);
 
-//searchbycusine.addEventListener('click', getMealListofgivencusine(String((searchbycusine.value))));
 
-//searchbycusine.addEventListener('click', getMealListofgivencusine(searchbycusine.value));
 
 
 /////
 recipeCloseBtn.addEventListener('click', () => {
+
 
     mealDetailsContent.parentElement.classList.remove('showRecipe');
 
@@ -42,12 +39,14 @@ recipeCloseBtn.addEventListener('click', () => {
 //////////////
 if (document.addEventListener) {
     document.addEventListener("click", handleClick, false);
+   
 }
 else if (document.attachEvent) {
     document.attachEvent("onclick", handleClick);
 }
 
 function handleClick(event) {
+ 
     event = event || window.event;
     event.target = event.target || event.srcElement;
 
@@ -55,10 +54,11 @@ function handleClick(event) {
 
     // Climb up the document tree from the target of the event
     while (element) {
-        if (element.nodeName === "BUTTON" && /cuisine/.test(element.className)) {
-            // The user clicked on a <button> or clicked on an element inside a <button>
+        if (element.nodeName === "INPUT" && /cuisine/.test(element.className)) {
+            // The user clicked on a <input> or clicked on an element inside a <input>
             // with a class name called "foo"
             doSomething(element);
+            
             break;
         }
 
@@ -66,9 +66,10 @@ function handleClick(event) {
     }
 }
 
-function doSomething(button) {
-    // do something with button
-    getMealListofgivencusine(String((button.value)))
+function doSomething(input) {
+    // do something with input
+    getMealListofgivencusine(String(input.id))
+    
 }
 
 //////////
@@ -80,7 +81,8 @@ function doSomething(button) {
 // get meal list that matches with the search query 
 
 function getMealListofgivencusine(cusineasked){
-    //let givencusine = document.getElementsByClassName("cuisine").value;
+    showresults()
+    //let givencusine = document.getElementsByClassName("cuisine").id;
     let givencusine =  cusineasked
   
 
@@ -143,8 +145,8 @@ function getMealListofgivencusine(cusineasked){
 
 
 function getMealList(){
-
-    let searchInputTxt = document.getElementById('search-input').value.trim();
+    showresults()
+    let searchInputTxt = document.getElementById('search-input').id.trim();
     if (searchInputTxt =="" || searchInputTxt == null){
         getRandomRecipe()
 
@@ -337,6 +339,7 @@ function getRandomRecipe(){ //returns single random recipe
 
  function showresults() {
     document.getElementById('reusltsdiv').style.display = "block";
+    document.getElementById('hideonsearch').style.display = "none";
  }
 
 
