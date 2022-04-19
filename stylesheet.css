@@ -30,11 +30,33 @@
     border: solid;
 }
 
-.navbarHead {
-    /* This is the text inside the navbar */
-    padding: 0.7vw;
+/* .navbarHead {
+    This is the text inside the navbar
+    padding-top: 2vw;
+    text-align: center;
+    padding-right: 5vw;
+    color: purple;
+    font-size: 20px;
+    border: solid;
+} */
+
+/* HAD TO SEPARATE ABOUT AND CONTACT INTO THEIR OWN ID'S */
+#about{
     color: purple;
     /* border: solid; */
+    margin-top: 35px;
+    margin-right: 100px;
+    height: 30px;
+    font-size: 20px;
+}
+
+#contact{
+    color: purple;
+    /* border: solid; */
+    margin-top: 35px;
+    margin-right: 100px;
+    height: 30px;
+    font-size: 20px;
 }
 
 /* Making the search bar  */
@@ -42,11 +64,8 @@
     position: relative;
     /* right: 90.5%; 
     bottom: 50px;
-
     align-items: center;
-
     width: 180px;
-
     height: 20px;
     border-radius: 40px;
     padding: 15px;
@@ -127,13 +146,15 @@ body {
     font-weight: 600;
     padding-left: 1vw;
     padding-right: 1vw;
-    padding-top: 80px;
+    padding-top: 40px; 
+    /* 2% also works ish for padding top */
     padding-bottom: -1vh;
     margin-left: 10vw;
     margin-top: 20px;
     text-align: center;
     min-width: 300px;
     height: 100px;
+    border: solid;
 }
 
 .hgrid-item-text {
@@ -141,50 +162,57 @@ body {
 }
 
 .number1 {
-    /* position: relative;
-    right: 72vw;
-    top: -2vh; */
+    position: relative;
+    left: 9%;
+    bottom: 11vh;
     color: white;
     background-color: #3D115F;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
-    padding: 1%;
     border-radius: 50%;
     text-align: center;
-    width: 2vw;
-    height: 2vh;
+    width: 2%;
+    height: 10%;
+    border: solid;
 }
 
 .number2 {
-    /* position: relative;
-    right: 55vw;
-    top: -2vh; */
+    position: relative;
+    left: 37.5%;
+    bottom: 14vh;
     color: white;
     background-color: #3D115F;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
-    padding: 1%;
     border-radius: 50%;
     text-align: center;
-    width: 2vw;
-    height: 2vh;
+    width: 2%;
+    height: 10%;
+    border: solid;
 }
 
 .number3 {
-    /* position: relative;
-    right: 39vw;
-    top: -2vh; */
+    position: relative;
+    left: 66.5%;
+    bottom: 17vh;
     color: white;
     background-color: #3D115F;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
-    padding: 1%;
     border-radius: 100%;
     text-align: center;
-    width: 2vw;
-    height: 2vh;
+    width: 2%;
+    height: 10%;
+    border: solid;
 }
 
+#favouritesID {
+    color: white;
+}
+
+.cuisine{
+    border: solid;
+}
 #cusineID {
     color: white;
 }
@@ -192,7 +220,13 @@ body {
 .cusine-grid img {
     width: 20vw;
     border-radius: 5%;
-    
+    border: solid;
+}
+
+.favourite-grid img {
+    width: 20vw;
+    border-radius: 5%;
+    border: solid;
 }
 
 .fgrid-item {
@@ -201,11 +235,13 @@ body {
     align-items: center;
     padding: 20px;
     transition: 0.5s;
+    /* border: solid; */
 }
 
 .fgrid-item:hover {
     box-shadow: 0 0 20px 0px #3D115F;
     border-radius: 5%;
+    border: solid;
 }
 
 #veganID {
@@ -228,6 +264,7 @@ body {
 .vegan-grid img {
     width: 20vw;
     border-radius: 5%;
+    border: solid;
 }
 
 
@@ -239,8 +276,8 @@ body {
     box-sizing: border-box;
 }
 :root{
-    --tenne-tawny: #d65108;
-    --tenne-tawny-dark: #b54507;
+    --tenne-tawny: #3D115F;
+    --tenne-tawny-dark: #3D115F;
 }
 body{
     font-weight: 300;
@@ -265,9 +302,7 @@ body{
 }
 
 /*  */
-.container{
-    min-height: 100vh;
-}
+
 .meal-wrapper{
     max-width: 1280px;
     margin: 0 auto;
@@ -282,9 +317,12 @@ body{
     font-size: 1rem;
 }
 .meal-search-box{
+    position: relative;
+    left: 100px;
     margin: 1.2rem 0;
+    margin-right: -20vw;
     display: flex;
-    align-items: stretch;
+    /* align-items: stretch; */
 }
 .search-control,
     
