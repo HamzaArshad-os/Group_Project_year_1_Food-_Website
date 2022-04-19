@@ -146,7 +146,7 @@ function getMealListofgivencusine(cusineasked){
 
 function getMealList(){
     showresults()
-    let searchInputTxt = document.getElementById('search-input').id.trim();
+    let searchInputTxt = document.getElementById('search-input').value.trim();
     if (searchInputTxt =="" || searchInputTxt == null){
         getRandomRecipe()
 
