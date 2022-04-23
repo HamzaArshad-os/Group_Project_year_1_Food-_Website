@@ -51,13 +51,14 @@ function handleClick(event) {
     event.target = event.target || event.srcElement;
 
     var element = event.target;
-
+    
     // Climb up the document tree from the target of the event
     while (element) {
-        if (element.nodeName === "INPUT" && /cuisine/.test(element.className)) {
+        if (element.nodeName === "DIV" && /media-element/.test(element.className)) {
             // The user clicked on a <input> or clicked on an element inside a <input>
             // with a class name called "foo"
             doSomething(element);
+           
             
             break;
         }
@@ -68,7 +69,9 @@ function handleClick(event) {
 
 function doSomething(input) {
     // do something with input
+    
     getMealListofgivencusine(String(input.id))
+
     
 }
 
@@ -124,7 +127,7 @@ function getMealListofgivencusine(cusineasked){
 
         } else{
 
-            html = "Sorry, we didn't find any meal!";
+            html = "Sorry, we didn't find any recipes!";
 
             mealList.classList.add('notFound');
 
@@ -191,7 +194,7 @@ function getMealList(){
 
         } else{
 
-            html = "Sorry, we didn't find any meal!";
+            html = "Sorry, we didn't find any recipes!";
 
             mealList.classList.add('notFound');
 
@@ -283,12 +286,18 @@ function mealRecipeModal(meal){
 }
 
 function getRandomRecipe(){ //returns single random recipe
-    let urltobe = `https://api.spoonacular.com/recipes/random?apiKey=${apikey}`
-    console.log(urltobe)
-    fetch(urltobe)
-    .then(response => response.json())
+    
+    showresults()
+    //let givencusine = document.getElementsByClassName("cuisine").id;
+   
+  
 
+    fetch(`https://api.spoonacular.com/recipes/random?apiKey=${apikey}`)
+
+    .then(response => response.json())
+   
     .then(data => {
+        console.log(data)
 
         let html = "";
 
@@ -322,7 +331,7 @@ function getRandomRecipe(){ //returns single random recipe
 
         } else{
 
-            html = "Sorry, we didn't find any meal!";
+            html = "Sorry, we didn't find any recipes!";
 
             mealList.classList.add('notFound');
 
