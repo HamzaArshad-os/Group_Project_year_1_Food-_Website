@@ -86,7 +86,7 @@ const images = document.querySelectorAll(".carousel");
       setInterval(function(){
         myFunctiongoForward()
         
-        }, 2000);
+        }, 2500);
 
         
 
