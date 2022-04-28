@@ -146,7 +146,6 @@ function getMealListofgivencusine(cusineasked){
 
 
 
-
 function getMealList(){
     showresults()
     let searchInputTxt = document.getElementById('search-input').value.trim();
@@ -189,6 +188,7 @@ function getMealList(){
                     </div> `              
 
             })  
+        
 
             mealList.classList.remove('notFound');
 
@@ -199,24 +199,15 @@ function getMealList(){
             mealList.classList.add('notFound');
 
         }
+    
 
  
 
         mealList.innerHTML = html;
 
     });
-
-   
-
-
     }
-  
-    
-
 }
-
- 
-
 // get meal recipe
 
  
@@ -229,7 +220,8 @@ function getMealRecipe(e){
 
         let mealItem = e.target.parentElement.parentElement;
 
-        fetch(`https://api.spoonacular.com/recipes/${mealItem.dataset.id}/analyzedInstructions?apiKey=${apikey}`)
+        fetch(`https://api.spoonacular.com/recipes//${mealItem.dataset.id}/summary?apiKey=${apikey}`)
+        
 
         .then(response => response.json())
 
@@ -247,35 +239,29 @@ function mealRecipeModal(meal){
 
     console.log(meal);
 
-    meal = meal[0];
+    
 
    
 
     let html = `
 
-        <h2 class = "recipe-title" class= "meal-name"></h2>
-
-        <p class = "recipe-category">${meal}</p>
+        <h2 class = "recipe-title" class= "meal-name">${meal.title}</h2>
 
         <div class = "recipe-instruct">
 
-            <h3>Instructions:</h3>
+            <h3>Summary:</h3>
 
-            <p>${meal.steps[0].step}</p>
-
-        </div>
-
-        <div class = "recipe-meal-img">
-
-            <img src = "${meal.image}" alt = "">
+            <p>${meal.summary}</p>
 
         </div>
 
-        <div class = "recipe-link">
+        <div class = "meal-name">
 
-            <a href = "${meal.strYoutube}" target = "_blank">Watch Video</a>
+         <a href = "#" class = "recipe-btn">Get Recipe</a>
 
-        </div>
+       </div>
+
+        
 
     `;
 
@@ -285,7 +271,8 @@ function mealRecipeModal(meal){
 
 }
 
-function getRandomRecipe(){ //returns single random recipe
+
+ function getRandomRecipe(){ //returns single random recipe
     
     showresults()
     //let givencusine = document.getElementsByClassName("cuisine").id;
@@ -295,15 +282,15 @@ function getRandomRecipe(){ //returns single random recipe
     fetch(`https://api.spoonacular.com/recipes/random?apiKey=${apikey}`)
 
     .then(response => response.json())
-   
+
     .then(data => {
         console.log(data)
 
         let html = "";
 
-        if(data.results){
+        if(data.recipes){
 
-            data.results.forEach(meal => {
+            data.recipes.forEach(meal => {
 
                 html += `
 
@@ -326,29 +313,31 @@ function getRandomRecipe(){ //returns single random recipe
                     </div> `              
 
             })  
+        
 
             mealList.classList.remove('notFound');
 
-        } else{
+        }
+         else{
 
             html = "Sorry, we didn't find any recipes!";
 
             mealList.classList.add('notFound');
 
         }
+    
 
  
 
         mealList.innerHTML = html;
 
     });
-    
+
 
  }
 
  function showresults() {
     document.getElementById('reusltsdiv').style.display = "block";
     document.getElementById('hideonsearch').style.display = "none";
+ 
  }
-
-

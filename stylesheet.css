@@ -498,7 +498,27 @@ body{
     width: 100%;
 }
 
-
+/* a link style cand color */
+a:link {
+    color: #B5904B ;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: #B5904B;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  }
 
 
 
