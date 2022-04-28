@@ -23,7 +23,10 @@ const recipeCloseBtn = document.getElementById('recipe-close-btn');
 
 searchBtn.addEventListener('click', getMealList);
 
+mealList.addEventListener('click', getMealsummary);
+
 mealList.addEventListener('click', getMealRecipe);
+
 
 
 
@@ -115,7 +118,7 @@ function getMealListofgivencusine(cusineasked){
 
                             <h3>${meal.title}</h3>
 
-                            <a href = "#" class = "recipe-btn">Get Recipe</a>
+                            <a href = "#" class = "recipe-btn">Get Summary</a>
 
                         </div>
 
@@ -181,7 +184,7 @@ function getMealList(){
 
                             <h3>${meal.title}</h3>
 
-                            <a href = "#" class = "recipe-btn">Get Recipe</a>
+                            <a href = "#" class = "recipe-btn">Get Summary</a>
 
                         </div>
 
@@ -208,11 +211,11 @@ function getMealList(){
     });
     }
 }
-// get meal recipe
+// get meal summary
 
  
 
-function getMealRecipe(e){
+function getMealsummary(e){
 
     e.preventDefault();
 
@@ -257,7 +260,7 @@ function mealRecipeModal(meal){
 
         <div class = "meal-name">
 
-         <a href = "#" class = "recipe-btn">Get Recipe</a>
+         <a href = "#" class = "recipe-btn">Get recipie</a>
 
        </div>
 
@@ -270,6 +273,66 @@ function mealRecipeModal(meal){
     mealDetailsContent.parentElement.classList.add('showRecipe');
 
 }
+function getMealRecipe(e){
+
+    e.preventDefault();
+
+    if(e.target.classList.contains('recipe-btn')){
+
+        let mealItem = e.target.parentElement.parentElement;
+
+        fetch(`https://api.spoonacular.com/recipes//${mealItem.dataset.id}/analyzeInstructions?apiKey=${apikey}`)
+        
+
+        .then(response => response.json())
+
+        .then(data => mealRecipeModal(data));
+
+}
+
+}
+
+// create modal
+
+ 
+
+function mealRecipeModal(meal){
+
+    console.log(meal);
+
+    
+
+   
+
+    let html = `
+
+        <h2 class = "recipe-title" class= "meal-name">${meal.title}</h2>
+
+        <div class = "recipe-instruct">
+
+            <h3>Summary:</h3>
+
+            <p>${meal.summary}</p>
+
+        </div>
+
+        <div class = "meal-name">
+
+         <a href = "#" class = "recipe-btn">Get recipie</a>
+
+       </div>
+
+        
+
+    `;
+
+    mealDetailsContent.innerHTML = html;
+
+    mealDetailsContent.parentElement.classList.add('showRecipe');
+
+}
+
+
 
 
  function getRandomRecipe(){ //returns single random recipe
