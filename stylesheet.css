@@ -679,3 +679,34 @@ a:link {
     min-width: 100%;
     min-height:30%;
 }
+
+  /* About Page */
+
+#about-header {
+    text-align: center;
+    margin-top: 60px;
+    color: #3D115F;
+    font-size: 50px;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: space-evenly;
+}
+
+#about-image {
+    width: 80%;
+    margin-left: 120px;
+    margin-top: 60px;
+
+}
+
+#about-text {
+    padding: 20px;
+    margin-left: 40px;
+    margin-top: 60px;
+    font-size: 24px;
+    font-weight: 700;
+}
