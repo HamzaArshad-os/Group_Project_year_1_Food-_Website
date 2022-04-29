@@ -122,7 +122,7 @@ const images = document.querySelectorAll(".carousel");
 
     document.addEventListener('keydown',logkey);
         function logkey(e){
-          log.textContent;
+          console.log.textContent;
           
           
           if(e.code === "ArrowRight"){
@@ -175,7 +175,7 @@ function getMealListofgivencusine(cusineasked){
 
                             <h3>${meal.title}</h3>
 
-                            <a href = "#" class = "recipe-btn">Get Summary</a>
+                            <a href = "#" class = "summary-btn">Get Summary</a>
 
                         </div>
 
@@ -241,7 +241,7 @@ function getMealList(){
 
                             <h3>${meal.title}</h3>
 
-                            <a href = "#" class = "recipe-btn">Get Summary</a>
+                            <a href = "#" class = "summary-btn">Get Summary</a>
 
                         </div>
 
@@ -276,7 +276,7 @@ function getMealsummary(e){
 
     e.preventDefault();
 
-    if(e.target.classList.contains('recipe-btn')){
+    if(e.target.classList.contains('summary-btn')){
 
         let mealItem = e.target.parentElement.parentElement;
 
@@ -285,7 +285,7 @@ function getMealsummary(e){
 
         .then(response => response.json())
 
-        .then(data => mealRecipeModal(data));
+        .then(data => mealsummaryModal(data));
 
 }
 
@@ -295,7 +295,7 @@ function getMealsummary(e){
 
  
 
-function mealRecipeModal(meal){
+function mealsummaryModal(meal){
 
     console.log(meal);
 
@@ -317,7 +317,7 @@ function mealRecipeModal(meal){
 
         <div class = "meal-name">
 
-         <a href = "#" class = "recipe-btn">Get recipie</a>
+         <a href = "#" class = "recipe-btn">Get recipe </a>
 
        </div>
 
@@ -330,6 +330,8 @@ function mealRecipeModal(meal){
     mealDetailsContent.parentElement.classList.add('showRecipe');
 
 }
+
+
 function getMealRecipe(e){
 
     e.preventDefault();
@@ -338,7 +340,7 @@ function getMealRecipe(e){
 
         let mealItem = e.target.parentElement.parentElement;
 
-        fetch(`https://api.spoonacular.com/recipes//${mealItem.dataset.id}/analyzeInstructions?apiKey=${apikey}`)
+        fetch(`https://api.spoonacular.com/recipes//${mealItem.dataset.id}/analyze?apiKey=${apikey}`)
         
 
         .then(response => response.json())
@@ -363,25 +365,21 @@ function mealRecipeModal(meal){
 
     let html = `
 
-        <h2 class = "recipe-title" class= "meal-name">${meal.title}</h2>
-
-        <div class = "recipe-instruct">
-
-            <h3>Summary:</h3>
-
-            <p>${meal.summary}</p>
-
-        </div>
-
-        <div class = "meal-name">
-
-         <a href = "#" class = "recipe-btn">Get recipie</a>
-
-       </div>
-
-        
-
-    `;
+        < <div class="meal-details-content">
+        <!-- <h2 class = "recipe-title">Meals Name Here</h2>
+<p class = "recipe-category">Category Name</p>
+<div class = "recipe-instruct">
+<h3>Instructions:</h3>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo blanditiis quis accusantium natus! Porro, reiciendis maiores molestiae distinctio veniam ratione ex provident ipsa, soluta suscipit quam eos velit autem iste!</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet aliquam voluptatibus ad obcaecati magnam, esse numquam nisi ut adipisci in?</p>
+</div>
+<div class = "recipe-meal-img">
+<img src = "food.jpg" alt = "">
+</div>
+<div class = "recipe-link">
+<a href = "#" target = "_blank">Watch Video</a>
+</div> -->
+    </div>`;
 
     mealDetailsContent.innerHTML = html;
 
