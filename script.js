@@ -352,6 +352,7 @@ function mealsummaryModal(meal){
          .then(response => response.json())
 
         .then(data => mealInstructionsModal(data));
+        
 
 };
 
@@ -362,6 +363,13 @@ function mealsummaryModal(meal){
  
 
  function mealInstructionsModal(meal){
+        
+
+        console.log(meal[0].key);
+    
+    
+    
+        
 
     
 
@@ -369,28 +377,30 @@ function mealsummaryModal(meal){
 
    
 
-    let html = `
+//     let html = `
 
-        <h2 class = "recipe-title" class= "meal-name">Instructions</h2>
+//         <h2 class = "recipe-title" class= "meal-name">Instructions</h2>
 
-        <div class = "recipe-instruct">
+//         <div class = "recipe-instruct">
 
-            <h3>Recipe: Follow the Steps </h3>
+//             <h3>Recipe: Follow the Steps </h3>
 
-            <p>${meal[0].steps}</p>
+//             <p>${step}</p>
 
-        </div>
+//         </div>
 
 
         
 
-    `;
+//     `;
 
-    mealDetailsContent.innerHTML = html;
+//     mealDetailsContent.innerHTML = html;
+    
+//     mealDetailsContent.parentElement.classList.add('recipeinst');
 
-    mealDetailsContent.parentElement.classList.add('recipeinst');
-
+// }
 }
+
 
 
  function showresults() {
