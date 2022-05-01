@@ -395,7 +395,7 @@ body {
 .summary-btn:hover {
     background: var(--tenne-tawny-dark);
 }
-.recipe-btn {
+.recipe-btn{
     text-decoration: none;
     color: #fff;
     background: var(--tenne-tawny);
@@ -455,7 +455,7 @@ body {
 .meal-details::-webkit-scrollbar-thumb {
     background: #f0f0f0;
     border-radius: 2rem;
-    -webkit-border-radius: 2rem;
+    -webkit-border-radius: 2rem
     -moz-border-radius: 2rem;
     -ms-border-radius: 2rem;
     -o-border-radius: 2rem;
@@ -467,6 +467,7 @@ body {
 .showRecipe {
     display: block;
 }
+
 
 .meal-details-content {
     margin: 2rem;

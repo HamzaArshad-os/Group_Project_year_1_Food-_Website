@@ -25,7 +25,7 @@ searchBtn.addEventListener('click', getMealList);
 
 mealList.addEventListener('click', getMealsummary);
 
-mealList.addEventListener('click', getMealRecipe);
+mealList.addEventListener('click', getMealInstructions)
 
 
 
@@ -268,6 +268,7 @@ function getMealList(){
     });
     }
 }
+
 // get meal summary
 
  
@@ -275,6 +276,7 @@ function getMealList(){
 function getMealsummary(e){
 
     e.preventDefault();
+   
 
     if(e.target.classList.contains('summary-btn')){
 
@@ -304,6 +306,7 @@ function mealsummaryModal(meal){
    
 
     let html = `
+     
 
         <h2 class = "recipe-title" class= "meal-name">${meal.title}</h2>
 
@@ -317,7 +320,74 @@ function mealsummaryModal(meal){
 
         <div class = "meal-name">
 
-         <a href = "#" class = "recipe-btn">Get recipe </a>
+         <a href = "#" class = "recipe-btn" > Get recipe </a>
+
+       </div>
+
+       
+
+        
+
+    `;
+
+    mealDetailsContent.innerHTML = html;
+
+    mealDetailsContent.parentElement.classList.add('showRecipe');
+    
+
+}
+
+// recipe instructions
+
+
+function getMealInstructions(e){
+   
+
+     e.preventDefault();
+    console.log(e.target.firstElementchild) // working on this, need to find how to access the e.target (Recipe-btn)
+
+    if(e.target.classList.contains('summary-btn')){
+
+        let mealItem = e.target.parentElement.parentElement;
+
+        fetch(`https://api.spoonacular.com/recipes//${mealItem.dataset.id}/analyzedInstructions?apiKey=${apikey}`)
+        
+
+        .then(response => response.json())
+
+        .then(data => mealInstructionsModal(data));
+        console.log(data);
+}
+
+}
+
+// create modal
+
+ 
+
+function mealInstructionsModal(meal){
+
+    console.log(meal);
+
+    
+
+   
+
+    let html = `
+
+        <h2 class = "recipe-title" class= "meal-name">${meal.title}</h2>
+
+        <div class = "recipe-instruct">
+
+            <h3>Recipe:</h3>
+
+            <p>${meal.summary}</p>
+
+        </div>
+
+        <div class = "meal-name">
+
+         <a href = "#" class = "recipe-btn" > Get recipe </a>
 
        </div>
 
@@ -331,128 +401,6 @@ function mealsummaryModal(meal){
 
 }
 
-
-function getMealRecipe(e){
-
-    e.preventDefault();
-
-    if(e.target.classList.contains('recipe-btn')){
-
-        let mealItem = e.target.parentElement.parentElement;
-
-        fetch(`https://api.spoonacular.com/recipes//${mealItem.dataset.id}/analyze?apiKey=${apikey}`)
-        
-
-        .then(response => response.json())
-
-        .then(data => mealRecipeModal(data));
-
-}
-
-}
-
-// create modal
-
- 
-
-function mealRecipeModal(meal){
-
-    console.log(meal);
-
-    
-
-   
-
-    let html = `
-
-        < <div class="meal-details-content">
-        <!-- <h2 class = "recipe-title">Meals Name Here</h2>
-<p class = "recipe-category">Category Name</p>
-<div class = "recipe-instruct">
-<h3>Instructions:</h3>
-<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo blanditiis quis accusantium natus! Porro, reiciendis maiores molestiae distinctio veniam ratione ex provident ipsa, soluta suscipit quam eos velit autem iste!</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet aliquam voluptatibus ad obcaecati magnam, esse numquam nisi ut adipisci in?</p>
-</div>
-<div class = "recipe-meal-img">
-<img src = "food.jpg" alt = "">
-</div>
-<div class = "recipe-link">
-<a href = "#" target = "_blank">Watch Video</a>
-</div> -->
-    </div>`;
-
-    mealDetailsContent.innerHTML = html;
-
-    mealDetailsContent.parentElement.classList.add('showRecipe');
-
-}
-
-
-
-
- function getRandomRecipe(){ //returns single random recipe
-    
-    showresults()
-    //let givencusine = document.getElementsByClassName("cuisine").id;
-   
-  
-
-    fetch(`https://api.spoonacular.com/recipes/random?apiKey=${apikey}`)
-
-    .then(response => response.json())
-
-    .then(data => {
-        console.log(data)
-
-        let html = "";
-
-        if(data.recipes){
-
-            data.recipes.forEach(meal => {
-
-                html += `
-
-                    <div class = "meal-item" data-id = "${meal.id}">
-
-                        <div class = "meal-img">
-
-                            <img src = "${meal.image}" alt = "food">
-
-                        </div>
-
-                        <div class = "meal-name">
-
-                            <h3>${meal.title}</h3>
-
-                            <a href = "#" class = "recipe-btn">Get Recipe</a>
-
-                        </div>
-
-                    </div> `              
-
-            })  
-        
-
-            mealList.classList.remove('notFound');
-
-        }
-         else{
-
-            html = "Sorry, we didn't find any recipes!";
-
-            mealList.classList.add('notFound');
-
-        }
-    
-
- 
-
-        mealList.innerHTML = html;
-
-    });
-
-
- }
 
  function showresults() {
     document.getElementById('reusltsdiv').style.display = "block";
