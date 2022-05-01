@@ -1,6 +1,6 @@
 
 
-const apikey= '07e0e692a4c044b2963896f8cbc4d8df'
+const apikey= '5040f01b83684cf1b279dc0b7b77785d'
 
 
 
@@ -11,6 +11,8 @@ const searchBtn = document.getElementById('search-btn');
 const mealList = document.getElementById('meal');
 
 const mealDetailsContent = document.querySelector('.meal-details-content');
+const mealInstructionsContent = document.querySelector('.meal-instruction-content');
+
 
 const recipeCloseBtn = document.getElementById('recipe-close-btn');
 
@@ -25,7 +27,7 @@ searchBtn.addEventListener('click', getMealList);
 
 mealList.addEventListener('click', getMealsummary);
 
-mealList.addEventListener('click', getMealInstructions)
+mealDetailsContent.addEventListener('click', getMealInstructions)
 
 
 
@@ -277,7 +279,7 @@ function getMealsummary(e){
 
     e.preventDefault();
    
-
+ console.log(e.target.parentElement.parentElement);
     if(e.target.classList.contains('summary-btn')){
 
         let mealItem = e.target.parentElement.parentElement;
@@ -289,7 +291,7 @@ function getMealsummary(e){
 
         .then(data => mealsummaryModal(data));
 
-}
+};
 
 }
 
@@ -305,34 +307,29 @@ function mealsummaryModal(meal){
 
    
 
-    let html = `
-     
+    let html = 
 
-        <h2 class = "recipe-title" class= "meal-name">${meal.title}</h2>
+   ` <div class = "meal-item" data-id = "${meal.id}">
 
-        <div class = "recipe-instruct">
+                        <div class = "title">
 
-            <h3>Summary:</h3>
+                           <h2> ${meal.title}</h2>
 
-            <p>${meal.summary}</p>
+                        </div>
 
-        </div>
+                        <div class = "meal-summary">
 
-        <div class = "meal-name">
+                            <p>${meal.summary}</p>
 
-         <a href = "#" class = "recipe-btn" > Get recipe </a>
+                            <a href = "#" class = "recipe-btn">Get recipe</a>
 
-       </div>
+                        </div>
 
-       
-
-        
-
-    `;
+                    </div> `              
 
     mealDetailsContent.innerHTML = html;
 
-    mealDetailsContent.parentElement.classList.add('showRecipe');
+    mealInstructionsContent.parentElement.classList.add('showRecipe');
     
 
 }
@@ -340,34 +337,33 @@ function mealsummaryModal(meal){
 // recipe instructions
 
 
-function getMealInstructions(e){
+ function getMealInstructions(e){
    
+    e.preventDefault();
 
-     e.preventDefault();
-    console.log(e.target.firstElementchild) // working on this, need to find how to access the e.target (Recipe-btn)
+  console.log(e.target.parentElement.parentElement) // working on this, need to find how to access the e.target (Recipe-btn)
 
-    if(e.target.classList.contains('summary-btn')){
+    if(e.target.classList.contains('recipe-btn')){
 
-        let mealItem = e.target.parentElement.parentElement;
+        let recipeItem =  e.target.parentElement.parentElement;
 
-        fetch(`https://api.spoonacular.com/recipes//${mealItem.dataset.id}/analyzedInstructions?apiKey=${apikey}`)
+         fetch(`https://api.spoonacular.com/recipes//${recipeItem.dataset.id}/analyzedInstructions?apiKey=${apikey}`)
         
-
-        .then(response => response.json())
+         .then(response => response.json())
 
         .then(data => mealInstructionsModal(data));
-        console.log(data);
-}
+
+};
 
 }
 
-// create modal
+//create modal
 
  
 
-function mealInstructionsModal(meal){
+ function mealInstructionsModal(meal){
 
-    console.log(meal);
+    
 
     
 
@@ -375,21 +371,16 @@ function mealInstructionsModal(meal){
 
     let html = `
 
-        <h2 class = "recipe-title" class= "meal-name">${meal.title}</h2>
+        <h2 class = "recipe-title" class= "meal-name">Instructions</h2>
 
         <div class = "recipe-instruct">
 
-            <h3>Recipe:</h3>
+            <h3>Recipe: Follow the Steps </h3>
 
-            <p>${meal.summary}</p>
+            <p>${meal[0].steps}</p>
 
         </div>
 
-        <div class = "meal-name">
-
-         <a href = "#" class = "recipe-btn" > Get recipe </a>
-
-       </div>
 
         
 
@@ -397,7 +388,7 @@ function mealInstructionsModal(meal){
 
     mealDetailsContent.innerHTML = html;
 
-    mealDetailsContent.parentElement.classList.add('showRecipe');
+    mealDetailsContent.parentElement.classList.add('recipeinst');
 
 }
 
