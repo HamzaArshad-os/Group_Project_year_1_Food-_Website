@@ -1,6 +1,6 @@
 
 
-const apikey= '08d74994ae54482a8a8515f54c1e496c'
+const apikey= '5040f01b83684cf1b279dc0b7b77785d'
 
 
 
@@ -351,7 +351,7 @@ function mealsummaryModal(meal){
         
          .then(response => response.json())
 
-        .then(data1 => mealInstructionsModal(data1));
+        .then(data => mealInstructionsModal(data));
         
 
 };
@@ -362,41 +362,46 @@ function mealsummaryModal(meal){
 
  
 
- function mealInstructionsModal(data1){
-     objc=data1[0].steps;
-     let reformattedArray = objc.map(obj => {
-        return obj.step;'<br/>'
-     })
-    //  console.log(reformattedArray)
+ function mealInstructionsModal(meal){
+        
+
+        console.log(meal[0].key);
     
     
+    
+        
+
+    
+
+    
+
    
 
-    let html = `
-    <div class = "instructions">
+//     let html = `
 
-    <div class = "title">
+//         <h2 class = "recipe-title" class= "meal-name">Instructions</h2>
 
-       <h2> Follow the steps </h2>
+//         <div class = "recipe-instruct">
 
-    </div>
-           <div> <p>${reformattedArray}></p> </div>
+//             <h3>Recipe: Follow the Steps </h3>
 
-        </div>
+//             <p>${step}</p>
+
+//         </div>
 
 
         
 
-    `;
-    
-    mealDetailsContent.innerHTML = html;
-    
-    mealDetailsContent.parentElement.classList.add('recipeinst');
-  
-      }
-    
+//     `;
 
+//     mealDetailsContent.innerHTML = html;
     
+//     mealDetailsContent.parentElement.classList.add('recipeinst');
+
+// }
+}
+
+
 
  function showresults() {
     document.getElementById('reusltsdiv').style.display = "block";

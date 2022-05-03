@@ -1,4 +1,5 @@
 /*////////////////////////HEADER PART OF THE HTML  ////////////////////*/
+
 * {
     margin: 0;
     padding: 0;
@@ -9,8 +10,6 @@
     color: white;
     display: flex;
     justify-content: center;
-    font-size: x-large;
-    padding: 20px;
 }
 
 .announcement-section {
@@ -18,6 +17,10 @@
     background-color: #3D115F;
 }
 
+.navigation {
+    width: 100%;
+    padding: 0%;
+}
 
 .navbar {
     /* This is the background of the navbar (The recipies cuisines etc part) */
@@ -26,7 +29,9 @@
     align-content: space-evenly;
     background-color: white;
     padding: 0vw;
+    border: solid;
 }
+
 
 /* .navbarHead {
     This is the text inside the navbar
@@ -38,7 +43,9 @@
     border: solid;
 } */
 
+
 /* HAD TO SEPARATE ABOUT AND CONTACT INTO THEIR OWN ID'S */
+
 #about {
     color: purple;
     /* border: solid; */
@@ -57,7 +64,10 @@
     font-size: 20px;
 }
 
+
 /* Making the search bar  */
+
+
 /* .search{ 
     position: relative;
     /* right: 90.5%; 
@@ -69,7 +79,6 @@
     padding: 15px;
     background: #9c88ff;
 } */
-
 
 .search-control,
 .search-btn {
@@ -106,10 +115,8 @@
     background: var(--tenne-tawny-dark);
 }
 
-
-
 #logo {
-    width: 300px;
+    width: 400px;
 }
 
 a:link {
@@ -220,10 +227,12 @@ body {
     color: white;
 }
 
-
+.imageElement {
+    margin-top: 10px;
+    height: 100%;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-
 * {
     padding: 0;
     margin: 0;
@@ -242,7 +251,9 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+
 /*  */
+
 .btn {
     font-family: inherit;
     cursor: pointer;
@@ -258,6 +269,7 @@ body {
     font-size: 2rem;
     margin-bottom: 1rem;
 }
+
 
 /*  */
 
@@ -287,10 +299,8 @@ body {
 }
 
 .search-control,
-
 .search-btn {
     width: 100%;
-
 }
 
 .search-control {
@@ -360,7 +370,32 @@ body {
     font-size: 1.4rem;
 }
 
-.recipe-btn {
+.summary-btn {
+    text-decoration: none;
+    color: #fff;
+    background: var(--tenne-tawny);
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    display: block;
+    width: 175px;
+    margin: 1rem auto;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+}
+
+.summary-btn:hover {
+    background: var(--tenne-tawny-dark);
+}
+.recipe-btn{
     text-decoration: none;
     color: #fff;
     background: var(--tenne-tawny);
@@ -386,7 +421,10 @@ body {
     background: var(--tenne-tawny-dark);
 }
 
+
+
 /* meal details */
+
 .meal-details {
     position: fixed;
     top: 50%;
@@ -425,9 +463,11 @@ body {
 
 
 /* js related */
+
 .showRecipe {
     display: block;
 }
+
 
 .meal-details-content {
     margin: 2rem;
@@ -525,20 +565,42 @@ body {
 
 
 /*  */
+
 .notFound {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr!important;
     color: var(--tenne-tawny);
     font-size: 1.8rem;
     font-weight: 600;
     width: 100%;
 }
 
-
+/* a link style cand color */
+a:link {
+    color: #B5904B ;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: #B5904B;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  }
 
 
 
 
 /* Media Queries */
+
 @media screen and (min-width: 600px) {
     .meal-search-box {
         width: 540px;
@@ -553,11 +615,9 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
-
     .meal-item {
         margin: 0;
     }
-
     .meal-details {
         width: 700px;
     }
@@ -570,150 +630,58 @@ body {
 }
 
 .media-scroller {
-
     --_spacer: var(--size-3);
-
     display: grid;
-
     gap: var(--_spacer);
-
     grid-auto-flow: column;
-
     grid-auto-columns: 21%;
-
-
-
     padding: 0 var(--_spacer) var(--_spacer);
-
-
-
     overflow-x: auto;
-
     overscroll-behavior-inline: contain;
-
 }
-
-
 
 .media-element {
-
     display: grid;
-
     grid-template-rows: min-content;
-
     gap: var(--_spacer);
-
     padding: var(--_spacer);
-
     background: var(--surface-2);
-
     border-radius: var(--radius-2);
-
     box-shadow: var(--shadow-2);
-
     padding: 15px;
-
+    box-sizing: border-box;
 }
 
-
+.media-element:hover {
+    box-shadow: 0 0 20px 0px #3D115F;
+    border-radius: 20%;
+    border: solid;
+}
 
 .media-element>img {
-
     inline-size: 100%;
-
     aspect-ratio: 16 / 9;
-
     object-fit: cover;
-
 }
-
-
 
 .snaps-inline {
-
     scroll-snap-type: inline mandatory;
-
     scroll-padding-inline: var(--_spacer, 1rem);
-
 }
-
-
 
 .snaps-inline>* {
-
     scroll-snap-align: start;
-
+}
+.carousel{
+    display: none;
+    width: 100%;
+    max-width: 100%;
+    max-height: 300px;
+    min-width: 100%;
+    min-height:30%;
 }
 
-
-
-/* general styling */
-
-
-
-.container {
-
-    inline-size: min(100% - 4rem, 70rem);
-
-    margin-inline: auto;
-
-}
-
-
-
-.flow {
-
-    display: grid;
-
-    gap: var(--size-3);
-
-}
-
-
-
-.page-header {
-
-    padding-block: var(--size-9);
-
-    margin-block-end: var(--size-9);
-
-    background: var(--gradient-16);
-
-    color: var(--gray-0);
-
-    box-shadow: var(--shadow-2);
-
-}
-
-
-
-.page-title {
-
-    font-size: var(--font-size-fluid-1);
-
-}
-
-
-
-.page-subtitle {
-
-    font-size: var(--font-size-fluid-1);
-
-}
-
-
-
-.section-title {
-
-    padding-inline-start: var(--size-6);
-
-    margin-block: var(--size-9) var(--size-3);
-
-}
-
-
-
-/* About Page */
+  /* About Page */
 
 #about-header {
     text-align: center;
@@ -744,7 +712,7 @@ body {
     font-weight: 700;
 }
 
-/* Contact Page */
+   /* Contact Page */
 
 #contact-header {
     text-align: center;
