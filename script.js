@@ -367,20 +367,23 @@ function mealsummaryModal(meal){
     objc=meal[0].steps;
      let reformattedArray = objc.map(obj => {
         return obj.step;
-     })
-    //  console.log(reformattedArray)
-
+     });
+     console.log(reformattedArray)
+    
+    
     
 
     let html = `
 
-        <h2 class = "recipe-title" class= "meal-name">Instructions</h2>
+        <h2 class = "recipe-title" class= "meal-name">Recipe</h2>
 
         <div class = "recipe-instruct">
 
-            <h3>Recipe: Follow the Steps </h3>
+            <h3>Instructions:</h3>
 
             <p>${reformattedArray}</p>
+
+            <h3> TIME TO ENJOY SOME GOOD FOOD! </h3>
 
         </div>
        
@@ -393,7 +396,7 @@ function mealsummaryModal(meal){
 
 
 }
-
+ 
 
 
  function showresults() {
