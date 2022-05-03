@@ -1,6 +1,6 @@
 
 
-const apikey= '5040f01b83684cf1b279dc0b7b77785d'
+const apikey= 'abfea097415d4cccb604dc62fcc05530'
 
 
 
@@ -364,41 +364,34 @@ function mealsummaryModal(meal){
 
  function mealInstructionsModal(meal){
         
-
-        console.log(meal[0].key);
-    
-    
-    
-        
-
-    
+    objc=meal[0].steps;
+     let reformattedArray = objc.map(obj => {
+        return obj.step;
+     })
+    //  console.log(reformattedArray)
 
     
 
-   
+    let html = `
 
-//     let html = `
+        <h2 class = "recipe-title" class= "meal-name">Instructions</h2>
 
-//         <h2 class = "recipe-title" class= "meal-name">Instructions</h2>
+        <div class = "recipe-instruct">
 
-//         <div class = "recipe-instruct">
+            <h3>Recipe: Follow the Steps </h3>
 
-//             <h3>Recipe: Follow the Steps </h3>
+            <p>${reformattedArray}</p>
 
-//             <p>${step}</p>
+        </div>
+       
 
-//         </div>
+    `;
 
-
-        
-
-//     `;
-
-//     mealDetailsContent.innerHTML = html;
+    mealDetailsContent.innerHTML = html;
     
-//     mealDetailsContent.parentElement.classList.add('recipeinst');
+    mealDetailsContent.parentElement.classList.add('recipeinst');
 
-// }
+
 }
 
 
