@@ -711,3 +711,33 @@ a:link {
     font-size: 24px;
     font-weight: 700;
 }
+
+   /* Contact Page */
+
+#contact-header {
+    text-align: center;
+    margin-top: 60px;
+    color: #3D115F;
+    font-size: 50px;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: space-evenly;
+}
+
+#contact-image {
+    width: 70%;
+    margin-left: 120px;
+    margin-top: 40px;
+}
+
+#contact-text {
+    padding: 20px;
+    margin-left: 40px;
+    margin-top: 60px;
+    font-size: 24px;
+    font-weight: 700;
+}
