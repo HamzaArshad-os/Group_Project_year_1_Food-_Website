@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="navigation">    
+    <div class="navigation">
         <img src="logo.png" alt="logo" id="logo" />
         <div class="navbar">
             <div class="meal-search-box">
@@ -18,9 +18,9 @@
                 <button type="submit" class="search-btn btn" id="search-btn" onclick="showresults()">
           <i class="fas fa-search"></i>
         </button>
-            </div>
-            <a href="./about.html" id="about">About</a>
-            <a href="./contact.html" id="contact">Contact</a>
+            </div class="nav-links">
+            <a href="about.html" id="about">About</a>
+            <a href="contact.html" id="contact">Contact</a>
         </div>
 
         <!-- End of the search bar -->
@@ -87,16 +87,17 @@
     </div>
 
     <div class="cusine-section">
-        <h3 id="cusineID">Cuisines</h3>
+        <h3 id="cusineID">Cuisine</h3>
         <div class="media-scroller snaps-inline">
+
             <div class="media-element" id="african">
                 <img src="african.png" alt="african" class="imageElement">
-                <p class="title">African</p>
+                <p class="title2">African</p>
             </div>
 
             <div class="media-element" id="american">
                 <img src="american.png" alt="american" class="imageElement">
-                <p class="title">American</p>
+                <p class="title2">American</p>
             </div>
 
             <div class="media-element" id="british">
@@ -133,8 +134,6 @@
                 <img src="german.png" alt="german">
                 <p class="title">German</p>
             </div>
-
-           
 
             <div class="media-element" id="indian">
                 <img src="indian.png" alt="indian">
@@ -207,6 +206,42 @@
             </div>
         </div>
     </div>
+
+
+    <h3 id="cusineID">Popular</h3>
+        <div class="media-scroller snaps-inline">
+            <div class="media-element" id="african">
+                <img src="african.png" alt="african" class="imageElement">
+                <p class="title">African</p>
+            </div>
+
+            <div class="media-element" id="british">
+                <img src="british.png" alt="british">
+                <p class="title">British</p>
+            </div>
+
+            <div class="media-element" id="chinese">
+                <img src="chinese.png" alt="chinese">
+                <p class="title">Chinese</p>
+            </div>
+
+            <div class="media-element" id="indian">
+                <img src="indian.png" alt="indian">
+                <p class="title">Indian</p>
+            </div>
+
+            <div class="media-element" id="italian">
+                <img src="italian.png" alt="italian">
+                <p class="title">Italian</p>
+            </div>
+
+            <div class="media-element" id="japanese">
+                <img src="japanese.png" alt="japanese">
+                <p class="title">Japanese</p>
+            </div>
+
+            
+        </div>
 
     <script src="script.js"></script>
 </body>
