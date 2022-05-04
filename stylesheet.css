@@ -370,7 +370,32 @@ body {
     font-size: 1.4rem;
 }
 
-.recipe-btn {
+.summary-btn {
+    text-decoration: none;
+    color: #fff;
+    background: var(--tenne-tawny);
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    display: block;
+    width: 175px;
+    margin: 1rem auto;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+}
+
+.summary-btn:hover {
+    background: var(--tenne-tawny-dark);
+}
+.recipe-btn{
     text-decoration: none;
     color: #fff;
     background: var(--tenne-tawny);
@@ -395,6 +420,7 @@ body {
 .recipe-btn:hover {
     background: var(--tenne-tawny-dark);
 }
+
 
 
 /* meal details */
@@ -441,6 +467,7 @@ body {
 .showRecipe {
     display: block;
 }
+
 
 .meal-details-content {
     margin: 2rem;
@@ -652,4 +679,65 @@ a:link {
     max-height: 300px;
     min-width: 100%;
     min-height:30%;
+}
+
+  /* About Page */
+
+#about-header {
+    text-align: center;
+    margin-top: 60px;
+    color: #3D115F;
+    font-size: 50px;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: space-evenly;
+}
+
+#about-image {
+    width: 80%;
+    margin-left: 120px;
+    margin-top: 60px;
+
+}
+
+#about-text {
+    padding: 20px;
+    margin-left: 40px;
+    margin-top: 60px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+   /* Contact Page */
+
+#contact-header {
+    text-align: center;
+    margin-top: 60px;
+    color: #3D115F;
+    font-size: 50px;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: space-evenly;
+}
+
+#contact-image {
+    width: 70%;
+    margin-left: 120px;
+    margin-top: 40px;
+}
+
+#contact-text {
+    padding: 20px;
+    margin-left: 40px;
+    margin-top: 60px;
+    font-size: 24px;
+    font-weight: 700;
 }

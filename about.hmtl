@@ -21,8 +21,8 @@
           <i class="fas fa-search"></i>
         </button>
       </div>
-      <a href="" id="about">About</a>
-      <a href="" id="contact">Contact</a>
+      <a href="./index.html" id="about">Home</a>
+      <a href="./about.hmtl" id="contact">About</a>
     </div>
 
     <!-- End of the search bar -->

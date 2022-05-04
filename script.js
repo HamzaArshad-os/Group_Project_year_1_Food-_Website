@@ -1,6 +1,6 @@
 
 
-const apikey= '07e0e692a4c044b2963896f8cbc4d8df'
+const apikey= '5040f01b83684cf1b279dc0b7b77785d'
 
 
 
@@ -11,8 +11,11 @@ const searchBtn = document.getElementById('search-btn');
 const mealList = document.getElementById('meal');
 
 const mealDetailsContent = document.querySelector('.meal-details-content');
+const mealInstructionsContent = document.querySelector('.meal-instruction-content');
+
 
 const recipeCloseBtn = document.getElementById('recipe-close-btn');
+
 
 
 
@@ -25,7 +28,7 @@ searchBtn.addEventListener('click', getMealList);
 
 mealList.addEventListener('click', getMealsummary);
 
-mealList.addEventListener('click', getMealRecipe);
+mealDetailsContent.addEventListener('click', getMealInstructions)
 
 
 
@@ -122,7 +125,7 @@ const images = document.querySelectorAll(".carousel");
 
     document.addEventListener('keydown',logkey);
         function logkey(e){
-          log.textContent;
+          console.log.textContent;
           
           
           if(e.code === "ArrowRight"){
@@ -175,7 +178,7 @@ function getMealListofgivencusine(cusineasked){
 
                             <h3>${meal.title}</h3>
 
-                            <a href = "#" class = "recipe-btn">Get Summary</a>
+                            <a href = "#" class = "summary-btn">Get Summary</a>
 
                         </div>
 
@@ -241,7 +244,7 @@ function getMealList(){
 
                             <h3>${meal.title}</h3>
 
-                            <a href = "#" class = "recipe-btn">Get Summary</a>
+                            <a href = "#" class = "summary-btn">Get Summary</a>
 
                         </div>
 
@@ -268,6 +271,7 @@ function getMealList(){
     });
     }
 }
+
 // get meal summary
 
  
@@ -275,8 +279,9 @@ function getMealList(){
 function getMealsummary(e){
 
     e.preventDefault();
-
-    if(e.target.classList.contains('recipe-btn')){
+   
+ console.log(e.target.parentElement.parentElement);
+    if(e.target.classList.contains('summary-btn')){
 
         let mealItem = e.target.parentElement.parentElement;
 
@@ -285,67 +290,9 @@ function getMealsummary(e){
 
         .then(response => response.json())
 
-        .then(data => mealRecipeModal(data));
+        .then(data => mealsummaryModal(data));
 
-}
-
-}
-
-// create modal
-
- 
-
-function mealRecipeModal(meal){
-
-    console.log(meal);
-
-    
-
-   
-
-    let html = `
-
-        <h2 class = "recipe-title" class= "meal-name">${meal.title}</h2>
-
-        <div class = "recipe-instruct">
-
-            <h3>Summary:</h3>
-
-            <p>${meal.summary}</p>
-
-        </div>
-
-        <div class = "meal-name">
-
-         <a href = "#" class = "recipe-btn">Get recipie</a>
-
-       </div>
-
-        
-
-    `;
-
-    mealDetailsContent.innerHTML = html;
-
-    mealDetailsContent.parentElement.classList.add('showRecipe');
-
-}
-function getMealRecipe(e){
-
-    e.preventDefault();
-
-    if(e.target.classList.contains('recipe-btn')){
-
-        let mealItem = e.target.parentElement.parentElement;
-
-        fetch(`https://api.spoonacular.com/recipes//${mealItem.dataset.id}/analyzeInstructions?apiKey=${apikey}`)
-        
-
-        .then(response => response.json())
-
-        .then(data => mealRecipeModal(data));
-
-}
+};
 
 }
 
@@ -353,7 +300,7 @@ function getMealRecipe(e){
 
  
 
-function mealRecipeModal(meal){
+function mealsummaryModal(meal){
 
     console.log(meal);
 
@@ -361,100 +308,107 @@ function mealRecipeModal(meal){
 
    
 
-    let html = `
+    let html = 
 
-        <h2 class = "recipe-title" class= "meal-name">${meal.title}</h2>
+   ` <div class = "meal-item" data-id = "${meal.id}">
 
-        <div class = "recipe-instruct">
+                        <div class = "title">
 
-            <h3>Summary:</h3>
-
-            <p>${meal.summary}</p>
-
-        </div>
-
-        <div class = "meal-name">
-
-         <a href = "#" class = "recipe-btn">Get recipie</a>
-
-       </div>
-
-        
-
-    `;
-
-    mealDetailsContent.innerHTML = html;
-
-    mealDetailsContent.parentElement.classList.add('showRecipe');
-
-}
-
-
-
-
- function getRandomRecipe(){ //returns single random recipe
-    
-    showresults()
-    //let givencusine = document.getElementsByClassName("cuisine").id;
-   
-  
-
-    fetch(`https://api.spoonacular.com/recipes/random?apiKey=${apikey}`)
-
-    .then(response => response.json())
-
-    .then(data => {
-        console.log(data)
-
-        let html = "";
-
-        if(data.recipes){
-
-            data.recipes.forEach(meal => {
-
-                html += `
-
-                    <div class = "meal-item" data-id = "${meal.id}">
-
-                        <div class = "meal-img">
-
-                            <img src = "${meal.image}" alt = "food">
+                           <h2> ${meal.title}</h2>
 
                         </div>
 
-                        <div class = "meal-name">
+                        <div class = "meal-summary">
 
-                            <h3>${meal.title}</h3>
+                            <p>${meal.summary}</p>
 
-                            <a href = "#" class = "recipe-btn">Get Recipe</a>
+                            <a href = "#" class = "recipe-btn">Get recipe</a>
 
                         </div>
 
                     </div> `              
 
-            })  
+    mealDetailsContent.innerHTML = html;
+
+    mealInstructionsContent.parentElement.classList.add('showRecipe');
+    
+
+}
+
+// recipe instructions
+
+
+ function getMealInstructions(e){
+   
+    e.preventDefault();
+
+  console.log(e.target.parentElement.parentElement) // working on this, need to find how to access the e.target (Recipe-btn)
+
+    if(e.target.classList.contains('recipe-btn')){
+
+        let recipeItem =  e.target.parentElement.parentElement;
+
+         fetch(`https://api.spoonacular.com/recipes//${recipeItem.dataset.id}/analyzedInstructions?apiKey=${apikey}`)
+        
+         .then(response => response.json())
+
+        .then(data => mealInstructionsModal(data));
         
 
-            mealList.classList.remove('notFound');
+};
 
-        }
-         else{
+}
 
-            html = "Sorry, we didn't find any recipes!";
-
-            mealList.classList.add('notFound');
-
-        }
-    
+//create modal
 
  
 
-        mealList.innerHTML = html;
+ function mealInstructionsModal(meal){
+   
+   
+    let toputonscreen = ""
+    try{
+        objc=meal[0].steps;
+        let reformattedArray = objc.map(obj => {
+           
+           return obj.step;
+        });
+        //console.log(reformattedArray)
+       
+        for (let i = 0; i < reformattedArray.length; i++) {
+            toputonscreen += String(i+1) + ". "+ String(reformattedArray[i]) + "<br>"+"<br>";
+        }
+    }
+    catch{
+        toputonscreen="Cannot find the instructions for this recipe :(";
+    }
+     
 
-    });
+    let html = `
+
+        <h2 class = "recipe-title" class= "meal-name">Recipe</h2>
+
+        <div class = "recipe-instruct">
+
+            <h3>Instructions:</h3>
+
+            <p>${toputonscreen}</p>
+
+            <h3> TIME TO ENJOY SOME GOOD FOOD! </h3>
+
+        </div>
+       
+
+    `;
+
+    mealDetailsContent.innerHTML = html;
+    
+    mealDetailsContent.parentElement.classList.add('recipeinst');
 
 
- }
+}
+ 
+
 
  function showresults() {
     document.getElementById('reusltsdiv').style.display = "block";
