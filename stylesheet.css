@@ -17,6 +17,12 @@
     background-color: #3D115F;
 }
 
+@media(max-width:700px){
+    .announcement-section{
+        text-align: center;
+    }
+}
+
 .navigation {
     width: 100%;
     padding: 0%;
@@ -53,6 +59,7 @@
     margin-right: 100px;
     height: 30px;
     font-size: 20px;
+    transform: translate(75px,0px);
 }
 
 #contact {
@@ -62,7 +69,18 @@
     margin-right: 100px;
     height: 30px;
     font-size: 20px;
+    transform: translate(-5px,0px);
 }
+
+@media(max-width:700px){
+    #about{
+        transform: translate(150px,0px);
+    }
+    #contact{
+        transform: translate(65px,0px);
+    }
+}
+
 
 
 /* Making the search bar  */
@@ -229,7 +247,8 @@ body {
 
 .imageElement {
     margin-top: 10px;
-    height: 100%;
+    height: 83%;
+    transform: translate(0px,-12px)
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
@@ -268,6 +287,16 @@ body {
 .title {
     font-size: 2rem;
     margin-bottom: 1rem;
+    text-align: center;
+}
+
+@media(max-width:700px){
+    .title{
+        font-size: small;
+    }
+    .title2{
+        transform: translate(0px,-10px);
+    }
 }
 
 
@@ -296,6 +325,12 @@ body {
     margin-right: -20vw;
     display: flex;
     /* align-items: stretch; */
+}
+
+@media(max-width:700px){
+    .meal-search-box{
+        transform: translate(-90px,0px);
+    }
 }
 
 .search-control,
@@ -652,6 +687,12 @@ a:link {
     box-sizing: border-box;
 }
 
+@media(max-width:700px){
+    .media-element{
+        transform: translate(0px,25px);
+    }
+}
+
 .media-element:hover {
     box-shadow: 0 0 20px 0px #3D115F;
     border-radius: 20%;
@@ -697,11 +738,22 @@ a:link {
     justify-items: space-evenly;
 }
 
+@media(max-width:700px){
+    .about-container{
+        text-align: center;
+    }
+}
+
 #about-image {
     width: 80%;
     margin-left: 120px;
     margin-top: 60px;
+}
 
+@media(max-width:700px){
+    #about-image{
+        transform: translate(-75px,0px);
+    }
 }
 
 #about-text {
@@ -732,6 +784,12 @@ a:link {
     width: 70%;
     margin-left: 120px;
     margin-top: 40px;
+}
+
+@media(max-width:700px){
+    #contact-image{
+        transform: translate(-67px,0px);
+    }
 }
 
 #contact-text {
