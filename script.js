@@ -5,7 +5,7 @@ const apikey= '5040f01b83684cf1b279dc0b7b77785d'
 
 
 
-const rc = 2
+const rc = 10
 const searchBtn = document.getElementById('search-btn');
 
 const mealList = document.getElementById('meal');
@@ -75,11 +75,19 @@ function handleClick(event) {
 
 function doSomething(input) {
     // do something with input
-    
+    console.log(input.parentElement.id)
     getMealListofgivencusine(String(input.id))
-
-    
+    if(input.parentElement.id =="cusine"){
+        getMealListofgivencusine(String(input.id))
+    }
+    if(input.parentElement.id =="popular"){
+        getMealListofpopular(String(input.id))
+    }
+  
 }
+
+
+
 
 //////////
 
@@ -205,6 +213,67 @@ function getMealListofgivencusine(cusineasked){
    
 
 }
+
+function getMealListofpopular(popularrequested){
+    showresults()
+    //let givencusine = document.getElementsByClassName("cuisine").id;
+    let request =  popularrequested
+  
+
+    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apikey}&number=${rc}&query="${request}"`)
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        let html = "";
+
+        if(data.results){
+
+            data.results.forEach(meal => {
+
+                html += `
+
+                    <div class = "meal-item" data-id = "${meal.id}">
+
+                        <div class = "meal-img">
+
+                            <img src = "${meal.image}" alt = "food">
+
+                        </div>
+
+                        <div class = "meal-name">
+
+                            <h3>${meal.title}</h3>
+
+                            <a href = "#" class = "summary-btn">Get Summary</a>
+
+                        </div>
+
+                    </div> `              
+
+            })  
+
+            mealList.classList.remove('notFound');
+
+        } else{
+
+            html = "Sorry, we didn't find any recipes!";
+
+            mealList.classList.add('notFound');
+
+        }
+
+ 
+
+        mealList.innerHTML = html;
+
+    });
+
+   
+
+}
+
 
 
 
